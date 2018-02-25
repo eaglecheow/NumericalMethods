@@ -1,3 +1,5 @@
+% Written by Cheow Yeu Tyng (18816756), 25 February 2018
+
 x = [-0.77459667 0 0.77459667];
 a = 0;
 b = 10;

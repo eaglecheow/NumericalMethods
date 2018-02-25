@@ -1,3 +1,5 @@
+% Written by Cheow Yeu Tyng (18816756), 25 February 2018
+
 %Define data points
 z = 0:2.5:30;
 d = [0 6.6 8.1 12.2 14.2 15.2 15.7 15.2 14.2 12.2 8.1 6.6 0];
