@@ -13,15 +13,15 @@
 %     calculation.
 
 %Producing Data Points
-x = linspace((pi/2), (3*pi/2), 6);
+x = linspace((pi/2), (3*pi/2), 7);
 y = cos(x).^3;
 
 %Declaring empty array for assignment
-multipleTwo = zeros(1, 6);
-multipleFour = zeros(1, 6);
+multipleTwo = zeros(1, 7);
+multipleFour = zeros(1, 7);
 
 %Assigning data for proper multiple weightage
-for i=2:5
+for i=2:6
     if (mod(i, 2) == 0)
         multipleFour(i) = y(i);
         continue
@@ -32,5 +32,5 @@ for i=2:5
 end
 
 %Result
-I = ((x(2) - x(1))/3)*(y(1) + y(6) + 2*sum(multipleTwo) + 4*sum(multipleFour))
+I = ((x(2) - x(1))/3)*(y(1) + y(7) + 2*sum(multipleTwo) + 4*sum(multipleFour))
     
