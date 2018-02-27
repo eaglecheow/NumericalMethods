@@ -12,6 +12,8 @@
 %     be rounded to the nearest value, causing rounding error to present during
 %     calculation.
 
+format long
+
 %Producing Data Points
 x = linspace((pi/2), (3*pi/2), 7);
 y = cos(x).^3;
