@@ -43,6 +43,7 @@ end
 rSquareSimpson = (2.5/3)*(rSquare(1) + rSquare(13) + sum(multipleFour)*4 + sum(multipleTwo)*2);
 
 %Results
+format long;
 vTrapezoidal = pi*rSquareTrapezoidal
 vSimpson = pi*rSquareSimpson
 sTrapezoidal = 2*pi*rTrapezoidal
