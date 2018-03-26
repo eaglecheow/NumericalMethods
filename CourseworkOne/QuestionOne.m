@@ -1,3 +1,6 @@
+clear all;
+clc;
+
 somePerimeter = EllipsePer(31, 55)
 
 function [output] = EllipsePer(a, b)

@@ -9,9 +9,13 @@ h = 0.005;
 t = 0:h:0.1;
 Idiff = @(t, I) ((V0./L)-(R(I)./L).*I);
 
-[x1, y1] = odeMidpoint(Idiff, 0, 0.1 , 0.005, 0);
+[t, I] = odeMidpoint(Idiff, 0, 0.1 , 0.005, 0);
+Answer = [t; I]
 
-plot(x1, y1)
+plot(t, I);
+title('Transient of I')
+xlabel('Time (s)');
+ylabel('Current (A)');
 
 
 function [xOut, yOut] = odeMidpoint(func, a, b, h, init)
@@ -23,6 +27,6 @@ function [xOut, yOut] = odeMidpoint(func, a, b, h, init)
         K2 = func(x(i)+0.5.*h, y(i)+0.5.*K1.*h);
         y(i+1)=y(i)+K2.*h;
     end
-    xOut = x
-    yOut = y
+    xOut = x;
+    yOut = y;
 end
