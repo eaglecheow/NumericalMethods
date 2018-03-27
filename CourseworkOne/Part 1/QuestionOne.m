@@ -1,4 +1,4 @@
 clear all;
 clc;
 
-somePerimeter = EllipsePer(6, 3)
+P = EllipsePer(6, 3)

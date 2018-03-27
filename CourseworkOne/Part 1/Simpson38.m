@@ -8,13 +8,14 @@ function [output] = Simpson38(func, a, b)
     while (percentageDifference > 0.1 || checkStatus == 0)
         checkStatus = 1;
         
-        dataPoints = (subIntervals * 2) + 2;
+        dataPoints = subIntervals;
+        h=(b-a)/dataPoints;
         multipleTwo = zeros(1, dataPoints);
         multipleThree = zeros(1, dataPoints);
-        x = linspace(a, b, dataPoints);
+        x = a:h:b;
         y = func(x);
 
-        for i = 2:(dataPoints-1)
+        for i = 2:(dataPoints)
             if (mod(i-1, 3) == 0)
                 multipleTwo(i) = y(i);
                 continue
@@ -23,10 +24,10 @@ function [output] = Simpson38(func, a, b)
                 continue
             end
         end    
-        currentIteration = (3*(x(2) - x(1))/8)*(y(1) + y(dataPoints) + 2*sum(multipleTwo) + 3*sum(multipleThree));
+        currentIteration = (3*(h)/8)*(y(1) + y(dataPoints+1) + 2*sum(multipleTwo) + 3*sum(multipleThree));
         
         percentageDifference = abs(currentIteration - previousIteration)/currentIteration*100;
-        subIntervals = subIntervals*2;
+        subIntervals = subIntervals*2
         previousIteration = currentIteration;
     end
     
